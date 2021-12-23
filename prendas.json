@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nombre": "Campera de Jean",
+    "categoria": "Camperas",
+    "stock": false
+  },
+  {
+    "id": 3,
+    "nombre": "Campera negra",
+    "categoria": "Camperas",
+    "stock": false
+  },
+  {
+    "id": 2,
+    "nombre": "Jean Gastado",
+    "categoria": "Pantalones",
+    "stock": false
+  }
+]

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es  ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mauricio Crudo - Proyecto final</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <!-- Styles (Bootstrap y Style) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header y nav -->
+    <header
+          class="
+            d-flex
+            flex-wrap
+            justify-content-center
+            py-3
+            mb-4
+            border-bottom
+          "
+        >
+      <div class="container header">
+          <a
+            href="index.html"
+            class="
+              d-flex
+              align-items-center
+              mb-3 mb-md-0
+              me-md-auto
+              text-dark text-decoration-none
+            "
+          >
+            <h1 class="fs-4 logo">Club Wendi</h1>
+          </a>
+          <div id="logInBtnDiv">
+            <button type="button" id="logInBtn" class="btn btn-outline-primary logInBtn" data-bs-toggle="modal" data-bs-target="#ingresarModal"> Ingresar usuario</button>
+          </div>
+          <div id="logOut">
+            <p>Hola de nuevo <span id="logInMessage"></span>!</p>
+            <button type="button" id="carritoBtn" class="btn btn-outline-primary carritoBtn" data-bs-toggle="modal" data-bs-target="#carritoModal"> Ver el carrito</button>
+            <button id="logOutBtn" class="btn btn-outline-danger logOutBtn">Cerrar sesión</button>
+          </div>
+        </div>
+      </header>
+    <!-- Fin Header/Inicio section -->
+    <section>
+      <!--Sign Up MODAL -->
+      <div id="ingresarDiv" class="ingresarDiv">
+        <div class="modal fade" id="ingresarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ingrese su nombre de usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Para ingresar al modo administrador y registrar nuevos productos ingrese "admin" </p>
+                <form id="ingresarForm">
+                  <label for="user">
+                  <input
+                    type="text"
+                    name="user"
+                    id="user"
+                    placeholder="Ingrese su user o 'admin'"
+                  />
+                  <button class="btn btn-outline-primary" data-bs-dismiss="modal" type="submit">Ingresar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      <!-- Carrito MODAL -->
+      <div id="divCarrito" class="carrito">
+        <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div id="carritoHeader" class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Carrito de compras <span id="carritoUser"></span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h5 id="cartFull">Productos seleccionados</h5>
+                <div class="cartModal" id="cartModal">
+
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="buyBtn" class="btn btn-primary buyBtn" >Finalizar compra</button>
+                <button type="button" id="removeBtn" class="btn btn-danger removeBtn" >Vaciar Carrito</button>
+                <button type="button" id="closeCart" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container ">
+        <!-- Agregar productos -->
+      <div id="add" class="add">
+        <h3>Agregar productos</h3>
+        <div class="form">
+          <form id="formPrendas" class="formAdd">
+            <div class="mb-3">
+              <label for="nombrePrenda" class="form-label"
+                >Nombre del producto</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="nombrePrenda"
+                placeholder="Ej: Campera de jean negra"
+                aria-describedby="prendaHelp"
+                name="prenda"
+                required
+              />
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="stock" id="flexCheckDefault" name="stock" checked>
+              <label class="form-check-label" for="flexCheckDefault">
+                Disponible
+              </label>
+            </div>
+            <label for="categoria"> Selecciona la categoria de la prenda</label>
+            <select class="form-select" name="categoria" aria-label="Categoria de la prenda">
+              <option selected value="Abrigos">Abrigos</option>
+              <option value="Camperas">Camperas</option>
+              <option value="Remeras">Remeras</option>
+              <option value="Pantalones">Pantalones</option>
+              <option value="Camisas">Camisas</option>
+            </select>
+            <button type="submit" class="btn btn-primary">
+              Agregar prenda
+            </button>
+          </form>
+        </div>
+        <hr>
+      </div>   
+      
+      <!-- Catalogo -->
+      <div id="catalogoDiv" class="catalogoDiv">
+        <h3>Catalogo de prendas</h3>
+        <div id="catalogo" class="catalogo">
+          <!-- Cards insertadas a traves de JS -->
+        </div>
+      </div>   
+      <hr>
+      <!-- about -->
+      <div class="about"> 
+      <h3>¿Quienes somos?</h3>
+      <p>Club Wendi es un rental de vestuario, destinado al alquiler para producciones audiovisuales.</p>
+    </div>
+      
+    </section>
+    <footer>
+      <h3 class="logo">Club Wendi</h3>
+    </footer>
+    <!-- Scripts (Bootstrap y Main) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/app.js" async></script>
+  </body>
+</html>

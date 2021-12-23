@@ -1,0 +1,104 @@
+header {
+  min-height: 120px;
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: rgb(255, 215, 215);
+  width: auto;
+
+}
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: rgb(255, 255, 255);
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.ingresarDiv {
+  display: flex;
+  flex-direction: column;
+}
+.catalogo {
+  margin-top: 15px;
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+.card-catalogo {
+  min-height: 150px;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 9%;
+}
+.card-title {
+  text-transform: capitalize;
+}
+.formAdd {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+.formCheck {
+  background-color: rgb(234, 170, 240);
+}
+.add {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  max-width: 500px;
+  align-self: center;
+}
+.aboutUsDiv {
+  margin: 50px;
+  padding: 20px;
+  border-radius: 5%;
+  background-color: rgb(112, 190, 190);
+  align-self: center;
+}
+.aboutUsText {
+  display: none;
+  opacity: 0;
+  text-align: center;
+}
+.logo {
+  font-family: "Lobster", cursive;
+}
+h3 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color:rgb(65, 65, 65)
+}
+h5 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+}
+.cartModal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-cart{
+  margin: 10px;
+  border-radius: 8%;
+  height: 100px;
+}
+
+.about{
+  margin-bottom: 50px;
+}
+
+footer{
+  display: flex;
+  justify-content: end;
+  margin-right: 5px;
+}
+section{
+  min-height: 75vh;
+}
